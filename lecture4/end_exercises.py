@@ -77,21 +77,6 @@ def circle(t, r):
     arc(t, r, 360)
 
 
-def draw_triangle(bob, radius, large_angle):
-    small_angle = (180 - large_angle) // 2
-    ab = radius**2
-    cos_y = math.cos(math.radians(large_angle))
-    a2_b2 = radius**2
-    c = math.sqrt(2 * a2_b2 - 2 * ab * cos_y)
-
-    bob.lt(180 - large_angle)
-    bob.fd(radius)
-    bob.lt(180 - small_angle)
-    bob.fd(int(c))
-    bob.lt(180 - small_angle)
-    bob.fd(radius)
-
-
 def draw_leaf(bob, radius, arc_angle):
     arc(bob, radius, arc_angle)
     bob.lt(180 - arc_angle)
@@ -141,27 +126,49 @@ def draw_flowers(radius):
     draw_flower(bob, radius * 3, 20)
 
 
+def draw_triangle(bob, radius, large_angle):
+    small_angle = (180 - large_angle) // 2
+    ab = radius**2
+    cos_y = math.cos(math.radians(large_angle))
+    a2_b2 = radius**2
+    c = math.sqrt(2 * a2_b2 - 2 * ab * cos_y)
+
+    bob.lt(180 - large_angle)
+    bob.fd(radius)
+    bob.lt(180 - small_angle)
+    bob.fd((c))
+    bob.lt(180 - small_angle)
+    bob.fd(radius)
+
+
+def draw_turtle_pie(bob, radius, n):
+    angle = math.floor(360 / n)
+    for _ in range(n):
+        draw_triangle(bob, radius, angle)
+        bob.lt(angle)
+
+
+def draw_turtle_pies(bob, radius):
+    move(-radius * 2)
+    draw_turtle_pie(bob, radius, 5)
+    move(radius * 2)
+    draw_turtle_pie(bob, radius, 6)
+    move(radius * 3)
+    draw_turtle_pie(bob, radius, 7)
+
+
 # the following condition checks whether we are
 # running as a script, in which case run the test code,
 # or being imported, in which case don't.
 
+
 if __name__ == "__main__":
     bob = turtle.Turtle()
-
+    bob.speed("fastest")
     radius = 100
     arc_angle = 45
-    draw_flowers(100)
+    # draw_turtle_pies(bob, radius)
+    draw_turtle_pies(radius)
 
-    # arc(bob, radius, arc_angle)
-    # bob.lt(90 - arc_angle)
-    # arc(bob, radius, arc_angle)
-    # bob.lt(270 - arc_angle)
-    # arc(bob, radius, arc_angle)
-    # bob.lt(90 - arc_angle)
-    # arc(bob, radius, arc_angle)
-    # bob.lt(270 - arc_angle)
-    # arc(bob, radius, arc_angle)
-
-    
     # wait for the user to close the window
     turtle.mainloop()
