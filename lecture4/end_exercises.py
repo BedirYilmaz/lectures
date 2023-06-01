@@ -91,12 +91,12 @@ def draw_hat(bob, radius, arc_angle):
     arc(bob, int(radius * 1.5), arc_angle)
 
 
-def draw_flower(bob, radius, leaf_freq):
-    interleaf_angle = int(360 / leaf_freq)
-    arc_angle = int(360 / (leaf_freq))
-    for _ in range(leaf_freq):
+def draw_flower(bob, radius, num_leaves):
+    interleaf_angle = int(360 / num_leaves)
+    arc_angle = int(360 / num_leaves)
+    for _ in range(num_leaves):
         draw_leaf(bob, radius, arc_angle)
-        if leaf_freq % 2 == 1:
+        if num_leaves % 2 == 1:
             bob.lt(180 + interleaf_angle)
     return arc_angle
 
@@ -114,6 +114,7 @@ def draw_flower_interleaved(bob, radius, leaf_freq):
     print(lf1, lf2)
     ang = draw_flower(bob, radius, lf1)
     bob.rt(int(ang / 2))
+    # bob.rt(20)
     draw_flower(bob, radius, lf2)
 
 
@@ -168,7 +169,9 @@ if __name__ == "__main__":
     radius = 100
     arc_angle = 45
     # draw_turtle_pies(bob, radius)
-    draw_turtle_pies(radius)
+    # draw_turtle_pies(radius)
+
+    draw_flower_interleaved(bob, 100, 10)
 
     # wait for the user to close the window
     turtle.mainloop()

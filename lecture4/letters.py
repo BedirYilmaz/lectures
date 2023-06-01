@@ -178,6 +178,12 @@ def draw_a(bob, radius):
     bob.fd(radius / 2)
 
 
+def draw_s(bob, radius):
+    bob.seth(-40)
+    bob.circle(radius, 220)
+    bob.circle(-radius, 220)
+
+
 def spiral(bob):
     """Draws a archimedean spiral.
 
@@ -194,8 +200,10 @@ if __name__ == "__main__":
     bob.speed("fast")
     radius = 100
 
-    for i in range(100):
-        arc(bob, 1.28 ** i, 90)
+    # for i in range(100):
+    #     arc(bob, 1.28 ** i, 90)
+
+    draw_s(bob, 100)
 
     # wait for the user to close the window
     turtle.mainloop()
