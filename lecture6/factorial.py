@@ -1,15 +1,23 @@
 def fac(p):
-
-    if p == 1:
-        return 1
-
-    return fac(p-1) * p
-
-
-def fac(p):
-    if p == 1:
-        return 1
     return p * fac(p-1)     
 
 
-print(type(fac(5)))
+print(fac(5))
+
+# --- init ---
+
+
+# --- fac # 1 ---
+# p = 5
+
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--- fac # 2 ---
+# p = 4
+
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--- fac # 3 ---
+# p = 3
+
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--- fac # 4 ---
+# p = 2
+
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--- fac # 5 ---
+# p = 1

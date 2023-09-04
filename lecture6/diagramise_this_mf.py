@@ -21,28 +21,25 @@ print(c(x, y+3, x+y))
 
 
 # --- init ---
-# x = 1 
+# x = 1
 # y = 2
-#
 
-# c
-#  
-# total = 9
+
+# --- c ---
 # x = 1
 # y = 5
 # z = 3
-# square = 8100
+# total = 9
+# square = 
 
-# b
-#
-# z = 9 
+
+# --- b ---
+# z = 9
 # prod = 90
+# 
 
-# a
-#
+# --- a ---
 # x = 9
 # y = 9
-
-
-
+# line 7 : x = 10
 
