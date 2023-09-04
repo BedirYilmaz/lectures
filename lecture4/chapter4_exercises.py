@@ -91,12 +91,12 @@ def draw_flower_interleaved(bob, radius, n):
 
 
 def draw_flowers(bob, radius):
-    move(bob, -radius)
-    draw_flower(bob, radius, 7)
-    move(bob, radius * 2)
-    draw_flower_interleaved(bob, radius, 5)
-    move(bob, radius * 2)
-    draw_flower(bob, radius * radius, 20)
+    # move(bob, -radius)
+    # draw_flower(bob, radius, 7)
+    # move(bob, radius * 2)
+    # draw_flower_interleaved(bob, radius, 5)
+    # move(bob, radius * 2)
+    draw_flower(bob, radius*5, 20)
 
 
 def move(bob, radius):
@@ -146,23 +146,23 @@ def draw_triangle(bob, radius, angle):
 if __name__ == "__main__":
     bob = turtle.Turtle()
     radius = 100
-    # draw_flowers(bob, 100)
+    draw_flowers(bob, 100)
 
-    move(bob, -7*radius)
-    bob.speed("slowest")
-    draw_turtle_pie(bob, 100, 5)
-    move(bob, 3*radius)
-    bob.speed("slow")
-    draw_turtle_pie(bob, 100, 7)
-    move(bob, 3*radius)
-    bob.speed("normal")
-    draw_turtle_pie(bob, 100, 9)
-    move(bob, 3*radius)
-    bob.speed("fast")
-    draw_turtle_pie(bob, 100, 11)
-    move(bob, 3*radius)
-    bob.speed("fastest")
-    draw_turtle_pie(bob, 100, 13)
+    # move(bob, -7*radius)
+    # bob.speed("slowest")
+    # draw_turtle_pie(bob, 100, 5)
+    # move(bob, 3*radius)
+    # bob.speed("slow")
+    # draw_turtle_pie(bob, 100, 7)
+    # move(bob, 3*radius)
+    # bob.speed("normal")
+    # draw_turtle_pie(bob, 100, 9)
+    # move(bob, 3*radius)
+    # bob.speed("fast")
+    # draw_turtle_pie(bob, 100, 11)
+    # move(bob, 3*radius)
+    # bob.speed("fastest")
+    # draw_turtle_pie(bob, 100, 13)
 
     # wait for the user to close the window
     turtle.mainloop()
